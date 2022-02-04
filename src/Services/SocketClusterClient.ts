@@ -16,8 +16,10 @@ export class SocketClient {
       this.client = SockerClusterClient.create({ host: args.url });
       this.onSocketConnected();
       SocketClient.instance = this;
-      Object.freeze(this);
     }
+  }
+  setAuthToken(token: string) {
+    this.authToken = token;
   }
   async onSocketConnected() {
     for await (const _ of this.client.listener("connect")) {
@@ -31,7 +33,7 @@ export class SocketClient {
         this.client.invoke("login", { token: this.token }),
         this.client.listener("authenticate").once(),
       ]);
-      this.authToken = ret[1].signedAuthToken;
+      this.setAuthToken(ret[1].signedAuthToken);
       if (this.authToken) {
         console.log("Authenticated");
       }

@@ -1,0 +1,17 @@
+{
+  "name": "socketclusterclienttester",
+  "version": "1.0.0",
+  "description": "Socket Cluster client which will be used to test connecting to a socket cluster client",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsc -w | nodemon dist/index.js",
+    "build": "tsc -p .",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "karim-w",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

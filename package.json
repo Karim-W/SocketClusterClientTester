@@ -12,6 +12,13 @@
   "author": "karim-w",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^17.0.14",
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "dotenv": "^16.0.0",
+    "joi": "^17.6.0",
+    "socketcluster-client": "^16.0.4"
   }
 }

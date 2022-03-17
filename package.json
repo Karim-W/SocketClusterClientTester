@@ -7,7 +7,8 @@
     "dev": "tsc -w | nodemon dist/index.js",
     "build": "tsc -p .",
     "start": "node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc -p . && node dist/index.js"
   },
   "author": "karim-w",
   "license": "ISC",

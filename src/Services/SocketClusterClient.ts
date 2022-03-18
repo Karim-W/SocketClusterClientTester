@@ -25,17 +25,14 @@ export class SocketClient {
 
   async MessageListener() {
     (async () => {
+      console.log(
+        "listening for messages sent through transmitting the `command`"
+      );
       // * Attach listener to commands
       for await (const data of this.client.receiver("command")) {
         console.log(data);
       }
     })();
-    // this.client.subscribe("899d92cd-ae4f-4223-b5ba-b9969741261e");
-    // for await (let data of this.client.channel(
-    //   "899d92cd-ae4f-4223-b5ba-b9969741261e"
-    // )) {
-    //   console.log(data);
-    // }
   }
 
   async onSocketConnected() {

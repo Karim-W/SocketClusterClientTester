@@ -7,17 +7,17 @@ export class SocketClient {
   //making this a singleton
   static instance: SocketClient;
   constructor(args: SocketClientOptions) {
-    if (SocketClient.instance instanceof SocketClient) {
-      return SocketClient.instance;
-    } else {
-      console.log(args.token);
-      this.token = args.token;
-      console.log(args.url);
-      this.client = SockerClusterClient.create({ host: args.url });
-      this.onSocketConnected();
-      this.MessageListener();
-      SocketClient.instance = this;
-    }
+    // if (SocketClient.instance instanceof SocketClient) {
+    //   return SocketClient.instance;
+    // } else {
+    console.log(args.token);
+    this.token = args.token;
+    console.log(args.url);
+    this.client = SockerClusterClient.create({ host: args.url });
+    this.onSocketConnected();
+    this.MessageListener();
+    SocketClient.instance = this;
+    // }
   }
   setAuthToken(token: string) {
     this.authToken = token;
